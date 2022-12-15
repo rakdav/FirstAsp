@@ -7,23 +7,26 @@
     <head>
         <meta name="viewport" content="width-device-width"/>
         <title>Index</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css"/>
     </head>
     <body>
-        <h2>С вами в компанни будут</h2>
-        <table>
-            <thead>
-                <tr><th>Имя</th><th>Email</th><th>Телефон</th></tr>
-            </thead>
-            <tbody>
+        <div class="text-center p-2">
+            <h2 class="text-center">С вами в компанни будут</h2>
+            <table class="table table-bordered table-striped table-sm">
+                <thead>
+                    <tr><th>Имя</th><th>Email</th><th>Телефон</th></tr>
+                </thead>
+                <tbody>
                 @foreach(FirstAsp.Models.GuestResponse r in Model!)
-            {
-                <tr>
-                    <td>@r.Name</td>
-                    <td>@r.Email</td>
-                    <td>@r.Phone</td>
-                </tr>
-            }
-        </tbody>
-        </table>
+                {
+                    <tr>
+                        <td>@r.Name</td>
+                        <td>@r.Email</td>
+                        <td>@r.Phone</td>
+                    </tr>
+                }
+            </tbody>
+            </table>
+        </div>
     </body>
 </html>

@@ -10,6 +10,7 @@ namespace FirstAsp.Models
         [EmailAddress]
         public string? Email { get; set; }
         [Required(ErrorMessage = "Введите телефон")]
+        [Phone]
         public string? Phone { get; set; }
         [Required(ErrorMessage = "Выберите вариант")]
         public bool? WillAttend { get; set; }

@@ -7,30 +7,34 @@
     <head>
         <meta name="viewport" content="width-device-width"/>
         <title>Index</title>
+        <link rel="stylesheet" href="~/css/style.css"/>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css"/>
     </head>
     <body>
-        <form asp-action="RsvpForm" method="post">
-            <div>
-                <label asp-for="Name">Ваше имя:</label>
-                <input asp-for="Name"/>
+        <h5 class="bg-primary text-white text-center m-2 p-2">Заполните форму</h5>
+        <form asp-action="RsvpForm" method="post" class="m-2">
+            <div asp-validation-summary="All"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="form-label">Ваше имя:</label>
+                <input asp-for="Name" class="form-control"/>
             </div>
-            <div>
-                <label asp-for="Email">Ваш email:</label>
-                <input asp-for="Email"/>
+            <div class="form-group">
+                <label asp-for="Email" class="form-label">Ваш email:</label>
+                <input asp-for="Email" class="form-control"/>
             </div>
-             <div>
-                <label asp-for="Phone">Ваш телефон:</label>
-                <input asp-for="Phone"/>
+             <div class="form-group">
+                <label asp-for="Phone" class="form-label">Ваш телефон:</label>
+                <input asp-for="Phone" class="form-control"/>
             </div>
-             <div>
-                <label asp-for="WillAttend">Вы принимаете приглашение?</label>
-                <select asp-for="WillAttend">
+             <div class="form-group">
+                <label asp-for="WillAttend" class="form-label">Вы принимаете приглашение?</label>
+                <select asp-for="WillAttend" class="form-control">
                     <option value="">Выберите вариант</option>
                     <option value="true">Да</option>
                     <option value="false">Нет</option>
                 </select>
             </div>
-            <button type="submit">Отправить</button>
+            <button class="btn btn-primary mt-3" type="submit">Отправить</button>
         </form>
     </body>
 </html>

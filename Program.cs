@@ -1,7 +1,14 @@
+using FirstAsp.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<PartyDbContext>(opts =>
+{
+    opts.UseSqlServer(builder.Configuration["ConnectionStrings:PartyConnection"]);
+});
 
 var app = builder.Build();
 

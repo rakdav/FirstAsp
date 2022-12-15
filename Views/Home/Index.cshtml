@@ -10,12 +10,13 @@
     <head>
         <meta name="viewport" content="width-device-width"/>
         <title>Вечеринка!!!</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css"/>
     </head>
     <body>
-        <div>
-            Вы приглашены на вечеринку
-            <hr/>
-            <a asp-action="RsvpForm">RSPV Now</a>
+        <div class="text-center m-2">
+            <h3>Вы приглашены на вечеринку</h3>
+            <h4>Принимаете приглашение?</h4>
+            <a class="btn btn-primary" asp-action="RsvpForm">RSPV Now</a>
         </div>
     </body>
 </html>
