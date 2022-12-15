@@ -1,0 +1,25 @@
+﻿@model FirstAsp.Models.GuestResponse
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width-device-width"/>
+        <title>Thanks</title>
+    </head>
+    <body>
+        <div>
+            <h1>Спасибо, @Model.Name!</h1>
+        @if (Model?.WillAttend == true)
+        {
+            @:Спасибо. С вас пиво!!!!
+        }
+        else
+        {
+            @:Жалко! Пиво не попьете.
+        }
+    </div>
+    Нажмите <a asp-action="ListResponses">Посмотрите на тех, кто прийдёт</a>
+    </body>
+</html>

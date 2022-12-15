@@ -1,0 +1,36 @@
+﻿@model FirstAsp.Models.GuestResponse
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width-device-width"/>
+        <title>Index</title>
+    </head>
+    <body>
+        <form asp-action="RsvpForm" method="post">
+            <div>
+                <label asp-for="Name">Ваше имя:</label>
+                <input asp-for="Name"/>
+            </div>
+            <div>
+                <label asp-for="Email">Ваш email:</label>
+                <input asp-for="Email"/>
+            </div>
+             <div>
+                <label asp-for="Phone">Ваш телефон:</label>
+                <input asp-for="Phone"/>
+            </div>
+             <div>
+                <label asp-for="WillAttend">Вы принимаете приглашение?</label>
+                <select asp-for="WillAttend">
+                    <option value="">Выберите вариант</option>
+                    <option value="true">Да</option>
+                    <option value="false">Нет</option>
+                </select>
+            </div>
+            <button type="submit">Отправить</button>
+        </form>
+    </body>
+</html>
