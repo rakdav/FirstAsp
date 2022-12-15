@@ -2,6 +2,9 @@
 {
     public interface IPartyRepository
     {
-        IQueryable<GuestResponse> GetResponses { get; }
+        IQueryable<GuestResponse> Responses { get; }
+        void SaveGuest(GuestResponse p);
+        void CreateGuest(GuestResponse p);
+        void DeleteGuest(GuestResponse p);
     }
 }

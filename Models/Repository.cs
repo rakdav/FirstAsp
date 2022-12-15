@@ -1,13 +1,32 @@
 ﻿namespace FirstAsp.Models
 {
-    public static class Repository
+    public class Repository:IPartyRepository
     {
-        private static List<GuestResponse> responses=new();
-        public static IEnumerable<GuestResponse> Responses => responses;
+        private PartyDbContext context;
 
-        public static void AddResponse(GuestResponse response)
+        public Repository(PartyDbContext context)
         {
-            responses.Add(response);
+            this.context = context;
+        }
+
+        public IQueryable<GuestResponse> Responses => context.GuestResponses;
+
+
+        public void CreateGuest(GuestResponse p)
+        {
+            context.GuestResponses.Add(p);
+            context.SaveChanges();
+        }
+
+        public void DeleteGuest(GuestResponse p)
+        {
+            context.Remove(p);
+            context.SaveChanges();
+        }
+
+        public void SaveGuest(GuestResponse p)
+        {
+            context.SaveChanges();
         }
     }
 }
